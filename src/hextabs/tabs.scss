@@ -1,0 +1,148 @@
+@import '../shared.scss';
+
+.hex-tabs {
+  font-family: "Source Sans Pro", sans-serif;
+  text-transform: uppercase;
+  background-color: $bg;
+  border-bottom: 1px solid $fg;
+  height: $tall + $gap;
+  display: flex;
+  width: 100%;
+
+  .spacer {
+    width: 25%;
+  }
+
+  .hex-tab {
+    color: $fg;
+    margin: $gap 0 0 0;
+    z-index: 10;
+    cursor: pointer;
+    min-width: 200px;
+    @media (max-width: $cutoff-1) {
+      min-width: 120px;
+    }
+    @media (max-width: $all-off-1) {
+      min-width: 80px;
+    }
+
+    position: relative;
+    bottom: -1px;
+    height: $tall + 1px;
+
+    &:hover > .text {
+      text-decoration: underline;
+    }
+
+    .up {
+      float: left;
+      height: $tall;
+      width: 24px;
+      @media (max-width: $all-off-1) {
+        display: none;
+      }
+    }
+    .up2 {
+      @media (max-width: $cutoff-1) {
+        width: 0;
+      }
+      @media (min-width: $all-off) {
+        display: none;
+      }
+      float: left;
+      height: $tall;
+      width: 1px;
+      border-left: solid 1px $fg;
+    }
+
+    .text {
+      float: left;
+      border-top: solid 1px $fg;
+      vertical-align: middle;
+      line-height: $tall;
+      height: $tall;
+      color: $fg;
+      font-weight: 100;
+      padding: 0 5px;
+      width: 140px;
+      @media (max-width: $cutoff-1) {
+        width: 135px;
+        width: 200px;
+        line-height: ($tall / 2) - 3px;
+        padding: 3px 1px 0 1px;
+        width: 65px;
+      }
+      text-align: center;
+      display: block;
+    }
+
+    .down {
+      @media (max-width: $all-off-1) {
+        display: none;
+      }
+      float: left;
+      height: $tall;
+    }
+
+    .down2 {
+      @media (min-width: $all-off) {
+        display: none;
+      }
+      float: left;
+      height: $tall;
+      border-right: solid 1px $fg;
+    }
+  }
+
+  .share-icons {
+    float: right;
+    font-size: 12px;
+    padding-left: 2px;
+    i {
+      padding: 0 2px;
+    }
+  }
+  .button-badge {
+    float: right;
+    background-color: $fg;
+    border-radius: 5px;
+    color: $bg;
+
+    margin: 10px 0 0 0;
+    padding: 2px 4px 4px 3px;
+    font-size: 16px;
+    font-weight: 400;
+    height: 17px;
+    line-height: 17px;
+    @media (max-width: $cutoff-1) {
+      position: relative;
+      left: 15px;
+      top: -35px;
+    }
+  }
+}
+
+////////////////////////////////
+.hex-tabs {
+  .active .up,
+  .active .down,
+  .active .text,
+  .active .text2 {
+    background: $bg;
+  }
+}
+
+.page {
+  background-color: $bg;
+  padding: 15px;
+  border: solid 1px $fg;
+  border-top: none;
+  font-weight: 100;
+  display: none;
+  font-family: "Source Sans Pro", sans-serif;
+  color: white;
+}
+.page.active {
+  display: block;
+}
+

@@ -1,0 +1,94 @@
+@import '../shared.scss';
+
+$tall: 41px;
+$thick: 1px;
+$fg: white;
+$bg: #56688b;
+$dk: #526488;
+$gap: 5px;
+$tabcount: 4;
+$cutoff: 220px * $tabcount;
+$cutoff-1: $cutoff - 1;
+$all-off: 137px * $tabcount;
+$all-off-1: $all-off - 1;
+
+.filters {
+  font-family: "Source Sans Pro", sans-serif;
+  color: #fff;
+}
+.filters .filter {
+  position: relative;
+  border: 1px solid #ddd;
+  margin: 0 4px 6px;
+  color: #ddd;
+  background: $bg;
+  padding: 0px 10px 0 7px;
+  display: inline-block;
+}
+.filters .filter:hover {
+  border: 1px solid white;
+  cursor: pointer;
+}
+.filters .filter:hover span {
+  text-decoration: underline;
+}
+.filters .filter span {
+  display: inline-block;
+}
+.filters .filter .tiny {
+  text-align: right;
+  width: 69px;
+  font-size: 11px;
+  height: 12px;
+  text-transform: uppercase;
+}
+.filters .filter .way-tiny {
+  font-size: 10px;
+  position: relative;
+  left: -4px;
+}
+.filters .filter .count {
+  font-size: +20px;
+  position: relative;
+  text-align: center;
+  top: -4px;
+  padding-left: 5px;
+  min-width: 23px;
+  text-decoration: none !important;
+}
+.filters .filter .msg {
+  font-weight: 300;
+  text-transform: uppercase;
+  color: white !important;
+  font-family: "Source Sans Pro", sans-serif;
+}
+.filters .smaller {
+  height: 30px;
+  .msg {
+    font-size: 12px;
+  }
+  .count {
+    position: relative;
+    top: 1px;
+  }
+}
+.active-filter {
+  border-bottom: solid 4px white !important;
+}
+.filter:before {
+  position: absolute;
+  left: -1px;
+  top: -1px;
+  content: "";
+  border-top: 15px solid silver;
+  border-right: 15px solid transparent;
+}
+.filter:after {
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  content: "";
+  border-top: 15px solid $bg;
+  border-right: 15px solid transparent;
+}
+
