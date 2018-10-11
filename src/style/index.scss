@@ -182,7 +182,7 @@ $all-off-1: $all-off - 1;
   border: 1px solid #ddd;
   margin: 0 4px 6px;
   color: #ddd;
-  background: #56688b;
+  background: $bg;
   padding: 0px 10px 0 7px;
   display: inline-block;
 }
@@ -249,7 +249,7 @@ $all-off-1: $all-off - 1;
   left: -2px;
   top: -2px;
   content: "";
-  border-top: 15px solid #56688b;
+  border-top: 15px solid $bg;
   border-right: 15px solid transparent;
 }
 
@@ -258,7 +258,7 @@ $all-off-1: $all-off - 1;
   font-family: "Source Sans Pro", sans-serif;
 }
 .add-button {
-  border: solid 10px #56688b;
+  border: solid 10px $bg;
   position: absolute;
   top: -15px;
   left: 1px;
@@ -296,7 +296,7 @@ $all-off-1: $all-off - 1;
 }
 .add-menu {
   display: inline-block;
-  background: #56688b;
+  background: $bg;
   padding: 10px;
   position: absolute;
   left: 47px;
@@ -332,7 +332,7 @@ $all-off-1: $all-off - 1;
         left: -2px;
         top: -2px;
         content: "";
-        border-top: 15px solid #56688b;
+        border-top: 15px solid $bg;
         border-right: 15px solid transparent;
       }
     }
@@ -428,7 +428,7 @@ $all-off-1: $all-off - 1;
     left: -1px;
     top: -2px;
     content: "";
-    border-top: 15px solid #56688b;
+    border-top: 15px solid $bg;
     border-right: 15px solid transparent;
   }
 }
