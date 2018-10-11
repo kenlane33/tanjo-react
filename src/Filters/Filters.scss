@@ -1,17 +1,5 @@
 @import '../shared.scss';
 
-$tall: 41px;
-$thick: 1px;
-$fg: white;
-$bg: #56688b;
-$dk: #526488;
-$gap: 5px;
-$tabcount: 4;
-$cutoff: 220px * $tabcount;
-$cutoff-1: $cutoff - 1;
-$all-off: 137px * $tabcount;
-$all-off-1: $all-off - 1;
-
 .filters {
   font-family: "Source Sans Pro", sans-serif;
   color: #fff;

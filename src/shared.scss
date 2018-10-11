@@ -10,3 +10,37 @@ $cutoff-1: $cutoff - 1;
 $all-off: 137px * $tabcount;
 $all-off-1: $all-off - 1;
 
+
+.buttony {
+  &:hover {
+    color: black;
+    background: white;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+
+.right {
+  float: right;
+}
+
+.cornered {
+  position: relative;
+  &:before {
+    position: absolute;
+    left: 0;
+    top: -1px;
+    content: "";
+    border-top: 15px solid silver;
+    border-right: 15px solid transparent;
+  }
+  &:after {
+    position: absolute;
+    left: -1px;
+    top: -2px;
+    content: "";
+    border-top: 15px solid $bg;
+    border-right: 15px solid transparent;
+  }
+}

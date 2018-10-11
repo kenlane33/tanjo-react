@@ -1,31 +1,28 @@
-//--////////////--------------------------------------o
+//---------//////////////--------------------------------------o
+import "./BoardTabs.scss";
 import { Filters } from "../Filters/Filters.js";
-import { Clk } from "../test_clicks/test_clicks.js";
 import { LblInpBut } from "../LblInpBut/LblInpBut.js";
-import { SocialIcons } from "../hextabs/Tabs.js"
-
-import { Component, render } from "preact";
-const React = { Component };
-
+import { SocialIcons } from "../Tabs/Tabs.js"
+//import { Component } from "preact";
 //---------////////////--------------------------------------o
-export var CardFilters = (p) => (
+export var CardPage = (p) => (
   <div>
     <div className="filter-by">Filter by:</div>
     <Filters
       filts={[
-        { ttl: "No", ttl2: "Filter", cnt: 200, click: Clk.filtCardNo },
-        { ttl: "Pinned", ttl2: "By You", cnt: 48, click: Clk.filtCardPins },
+        { ttl: "No", ttl2: "Filter", cnt: 200, click: p.clicks.filtCardNo },
+        { ttl: "Pinned", ttl2: "By You", cnt: 48, click: p.clicks.filtCardPins },
         {
           ttl: "Tanjo Bot",
           ttl2: "Recommends",
           cnt: 152,
-          click: Clk.filtCardBots
+          click: p.clicks.filtCardBots
         },
         {
           ttl: "Pinned By",
           ttl2: "Collaborators",
           cnt: 0,
-          click: Clk.filtCardCollab
+          click: p.clicks.filtCardCollab
         }
       ]}
       initIdx="1"
@@ -33,16 +30,16 @@ export var CardFilters = (p) => (
   </div>
 );
 //---------///////////--------------------------------------o
-export var ActFilters = (p) => (
+export var ActPage = (p) => (
   <div>
     <div className="filter-by">Filter by:</div>
     <Filters
       filts={[
-        { ttl: "Summary", cnt: 200, click: Clk.filtActSummary },
-        { ttl: "Bots", cnt: 48, click: Clk.filtActBots },
-        { ttl: "Humans", cnt: 152, click: Clk.filtActHumans },
-        { ttl: "Chat", cnt: 0, click: Clk.filtActChat },
-        { ttl: "Me", cnt: 0, click: Clk.filtActMe }
+        { ttl: "Summary", cnt: 200, click: p.clicks.filtActSummary },
+        { ttl: "Bots", cnt: 48, click: p.clicks.filtActBots },
+        { ttl: "Humans", cnt: 152, click: p.clicks.filtActHumans },
+        { ttl: "Chat", cnt: 0, click: p.clicks.filtActChat },
+        { ttl: "Me", cnt: 0, click: p.clicks.filtActMe }
       ]}
       initIdx="1"
       short
@@ -51,7 +48,7 @@ export var ActFilters = (p) => (
 );
 
 //---/////////---------------------------------------------o
-export var SharePage = () => (
+export var SharePage = (p) => (
     <div className="share-page">
       <LblInpBut
         lbl="Shareable board link"
@@ -60,6 +57,7 @@ export var SharePage = () => (
         placeholder=" "
         inputTxt="http://localhost:3000/boards/dD"
         cls=""
+        click={p.clicks.copyLink}
       />
       <LblInpBut
         lbl="Invite collaborators"
@@ -68,6 +66,7 @@ export var SharePage = () => (
         placeholder="Email addresses separated by commas"
         inputTxt=""
         cls=""
+        click={p.clicks.sendShare}
       />
       <SocialIcons
         cls="big-icons"
@@ -75,10 +74,10 @@ export var SharePage = () => (
         cls_i="buttony"
         cls_s="cornered"
         clicks={[
-          Clk.ShareLinkedIn,
-          Clk.ShareFacebook,
-          Clk.ShareTwitter,
-          Clk.ShareSlack
+          p.clicks.ShareLinkedIn,
+          p.clicks.ShareFacebook,
+          p.clicks.ShareTwitter,
+          p.clicks.ShareSlack
         ]}
       />
     </div>

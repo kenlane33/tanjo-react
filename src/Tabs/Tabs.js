@@ -1,11 +1,8 @@
-
-import { Component, render } from "preact";
+//---------/////////------------------------------------------o
 import './tabs.scss';
-const React = { Component };
-
-//----/////-------------------------------------------o
-export class Tabs extends React.Component {
-  ////////////-------------------o
+import { Component } from "preact";
+//-----------/////-------------------------------------------o
+export class Tabs extends Component {
   constructor(p) {
     super(p);
     this.state = { actIdx: p.initIdx || 0 };
@@ -20,28 +17,30 @@ export class Tabs extends React.Component {
       <div>
         <div className="hex-tabs">
           <div className="spacer" />
-          {this.props.tabs.map((x, i) => {
-            return [
-              <Tab
-                lbl={x.lbl}
-                lbl2={x.lbl2}
-                active={this.state.actIdx == i}
-                idx={i}
-                parentSetActiveIdx={this.setActiveIdx}
-              />,
-              <div className="spacer" />
-            ];
-          })}
-        </div>
-        {this.props.tabs.map((x, i) => {
-          return <TabPage active={this.state.actIdx == i}>{x.page}</TabPage>;
-        })}
+            {this.props.tabs.map((x, i) => {
+              return [
+                  <Tab
+                  lbl={x.lbl}
+                  lbl2={x.lbl2}
+                  active={this.state.actIdx == i}
+                  idx={i}
+                  parentSetActiveIdx={this.setActiveIdx}
+                />,
+                  <div className="spacer" />
+              ];
+              })}
+         </div>
+        {this.props.tabs.map((x, i) => { return (
+           <TabPage active={this.state.actIdx == i}>
+            {x.page}
+           </TabPage>);
+         })}
       </div>
     );
   }
 }
 //----////--------------------------------------------o
-class Tab extends React.Component {
+class Tab extends Component {
   render() {
     let actClass = this.props.active ? " active" : "";
     return (

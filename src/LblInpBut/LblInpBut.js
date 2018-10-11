@@ -1,26 +1,33 @@
-import { Component, render } from "preact";
-const React = { Component };
-
-//----//////////---------------------------------------------o
-export class LblInpBut extends React.Component {
+//---------//////////////--------------------------------------o
+import "./LblInpBtn.scss";
+import { Component } from "preact";
+//-----------//////////---------------------------------------------o
+export class LblInpBut extends Component {
   constructor(p) {
     super(p);
     this.state = {
       showMsg: false,
       inputTxt: p.inputTxt
     };
-    this.changed = this.changed.bind(this);
   }
-  changed(ev) {
+  ////////---------------------o
+  changed = (ev) => {
     this.setState({ inputTxt: ev.target.value });
   }
+  ////////---------------------o
+  showMsgForABit = () => {
+    this.setState({ showMsg: true });
+    setTimeout(() => { this.setState({ showMsg: false });},4000);
+  }
+  ///////------------------o
   render() {
+    let msgStl = { fontSize: "11px", display: this.state.showMsg?"":"none" };
     return (
       <div className={"share " + (this.props.cls || "")}>
         <div
           className="results right text-treatment"
           id="copied"
-          style={{ fontSize: "11px", display: "none" }}
+          style={msgStl}
         >
           {this.props.msg}
         </div>
@@ -38,6 +45,10 @@ export class LblInpBut extends React.Component {
             className="pale-btn lbl-inp-btn__btn buttony"
             data-results="#copied"
             data-target="#share-url"
+            onClick={()=>{
+              this.showMsgForABit();
+              this.props.click();
+              }}
           >
             {this.props.btn}
           </div>

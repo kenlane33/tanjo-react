@@ -1,0 +1,22 @@
+.filter-by {
+  height: 50px;
+  display: block;
+  float: left;
+  color: #ddd;
+  padding-top: 5px;
+}
+
+.big-icons {
+  font-size: 25px;
+  i {
+    border: solid 1px #ccc;
+    padding: 4px 14px;
+    margin-right: 10px;
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
+      background: #fff;
+      color: black;
+    }
+  }
+}

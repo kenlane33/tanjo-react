@@ -1,8 +1,8 @@
+//------///////////////--------------------------------------o
+import "./Filters.scss"
 import { Component } from "preact";
-import "./filters.scss"
-const React = { Component };
-
-export class Filters extends React.Component {
+//-----------////////--------------------------------------o
+export class Filters extends Component {
   constructor(p) {
     super(p);
     this.state = {
@@ -39,7 +39,7 @@ var FilterText = (p) => {
 var Filter = (p) => {
   let cls = "filter";
   if (p.active) cls += " active-filter";
-  if (p.short) cls += " smaller";
+  if (p.short)  cls += " smaller";
   let msg = (
     <span className="msg">
       <FilterText txt={p.ttl} />
