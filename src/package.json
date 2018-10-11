@@ -1,0 +1,10 @@
+{
+  "name": "react-tabs",
+  "version": "1.0.0",
+  "description": "React-based tab and filter buttons.",
+  "keywords": [],
+  "main": "index.js",
+  "dependencies": {
+    "preact": "8.2.5"
+  }
+}
