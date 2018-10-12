@@ -1,8 +1,8 @@
 //------///////////////--------------------------------------o
-import "./Filters.scss"
+import "./FilterBtns.scss"
 import { Component } from "preact";
 //-----------////////--------------------------------------o
-export class Filters extends Component {
+export class FilterBtns extends Component {
   constructor(p) {
     super(p);
     this.state = {
@@ -17,7 +17,7 @@ export class Filters extends Component {
       <div className="filters">
         {this.props.filts.map((x, i) => {
           return (
-            <Filter
+            <FilterBtn
               {...x}
               active={this.state.actIdx == i}
               short={this.props.short}
@@ -36,7 +36,7 @@ var FilterText = (p) => {
   return <div className={cls}>{p.txt}</div>;
 };
 //--///////------------------------------------------------o
-var Filter = (p) => {
+var FilterBtn = (p) => {
   let cls = "filter";
   if (p.active) cls += " active-filter";
   if (p.short)  cls += " smaller";

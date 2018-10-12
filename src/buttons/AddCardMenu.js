@@ -25,10 +25,11 @@ export class AddCardButton extends Component {
   ///////-------o
   render() {
     let mnuStl = this.state.open ? {} : { display: "none" };
+    let cx=(s)=>({className:s});
     return (
       <div>
         <div className="add-button-box" onClick={this.toggle}>
-          <div className="add-button">
+          <div className="add-button" {...cx('add-button')}>
             <a>
               <div className="inner">+</div>
               <div className="add-card">ADD</div>

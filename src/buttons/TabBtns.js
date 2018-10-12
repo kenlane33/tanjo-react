@@ -1,40 +1,38 @@
 //---------/////////------------------------------------------o
-import './tabs.scss';
+import "./TabBtns.scss";
 import { Component } from "preact";
 //-----------/////-------------------------------------------o
-export class Tabs extends Component {
+export class TabBtns extends Component {
   constructor(p) {
     super(p);
     this.state = { actIdx: p.initIdx || 0 };
   }
   /////////////-------------------o
-  setActiveIdx = (i) => {
+  setActiveIdx = i => {
     this.setState({ actIdx: i });
-  }
+  };
   ///////-------------------------------------------o
   render() {
     return (
       <div>
         <div className="hex-tabs">
           <div className="spacer" />
-            {this.props.tabs.map((x, i) => {
-              return [
-                  <Tab
-                  lbl={x.lbl}
-                  lbl2={x.lbl2}
-                  active={this.state.actIdx == i}
-                  idx={i}
-                  parentSetActiveIdx={this.setActiveIdx}
-                />,
-                  <div className="spacer" />
-              ];
-              })}
-         </div>
-        {this.props.tabs.map((x, i) => { return (
-           <TabPage active={this.state.actIdx == i}>
-            {x.page}
-           </TabPage>);
-         })}
+          {this.props.tabs.map((x, i) => {
+            return [
+              <Tab
+                lbl={x.lbl}
+                lbl2={x.lbl2}
+                active={this.state.actIdx == i}
+                idx={i}
+                parentSetActiveIdx={this.setActiveIdx}
+              />,
+              <div className="spacer" />
+            ];
+          })}
+        </div>
+        {this.props.tabs.map((x, i) => {
+          return <TabPage active={this.state.actIdx == i}>{x.page}</TabPage>;
+        })}
       </div>
     );
   }
@@ -73,7 +71,7 @@ class Tab extends Component {
   }
 }
 //--////////-------------------------------------------o
-var TabPage = (props) => {
+var TabPage = props => {
   let cls = "page" + (props.active ? " active" : "");
   return (
     <div className={cls}>
@@ -84,9 +82,9 @@ var TabPage = (props) => {
 };
 
 //--//////--------------------------------------o
-export var Badge = (p) => <div className="button-badge">{p.num}</div>;
+export var Badge = p => <div className="button-badge">{p.num}</div>;
 //--////////////--------------------------------------o
-export var SocialIcons = (p) => {
+export var SocialIcons = p => {
   let cls = p.cls || "share-icons";
   let cls_i = p.cls_i || "";
   let cls_s = p.cls_s || "";
