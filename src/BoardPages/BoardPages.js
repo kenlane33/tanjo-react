@@ -1,7 +1,7 @@
 //---------//////////////--------------------------------------o
-import "./BoardTabs.scss";
+import "./BoardPages.scss";
 import { Filters } from "../Filters/Filters.js";
-import { LblInpBut } from "../LblInpBut/LblInpBut.js";
+import { LblInpBtn } from "../LblInpBtn/LblInpBtn.js";
 import { SocialIcons } from "../Tabs/Tabs.js"
 //import { Component } from "preact";
 //---------////////////--------------------------------------o
@@ -10,20 +10,10 @@ export var CardPage = (p) => (
     <div className="filter-by">Filter by:</div>
     <Filters
       filts={[
-        { ttl: "No", ttl2: "Filter", cnt: 200, click: p.clicks.filtCardNo },
-        { ttl: "Pinned", ttl2: "By You", cnt: 48, click: p.clicks.filtCardPins },
-        {
-          ttl: "Tanjo Bot",
-          ttl2: "Recommends",
-          cnt: 152,
-          click: p.clicks.filtCardBots
-        },
-        {
-          ttl: "Pinned By",
-          ttl2: "Collaborators",
-          cnt: 0,
-          click: p.clicks.filtCardCollab
-        }
+        {ttl: "No",        ttl2: "Filter",        cnt: 200, click: p.clicks.filtCardNo },
+        {ttl: "Pinned",    ttl2: "By You",        cnt: 48,  click: p.clicks.filtCardPins},
+        {ttl: "Bot",       ttl2: "Recommended",   cnt: 152, click: p.clicks.filtCardBots},
+        {ttl: "Pinned By", ttl2: "Collaborators", cnt: 0,   click: p.clicks.filtCardCollab}
       ]}
       initIdx="1"
     />
@@ -50,7 +40,7 @@ export var ActPage = (p) => (
 //---/////////---------------------------------------------o
 export var SharePage = (p) => (
     <div className="share-page">
-      <LblInpBut
+      <LblInpBtn
         lbl="Shareable board link"
         msg="Copied To Clipboard"
         btn="COPY LINK"
@@ -59,7 +49,7 @@ export var SharePage = (p) => (
         cls=""
         click={p.clicks.copyLink}
       />
-      <LblInpBut
+      <LblInpBtn
         lbl="Invite collaborators"
         msg="Sending invitations..."
         btn="SEND"

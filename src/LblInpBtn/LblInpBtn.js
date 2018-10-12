@@ -2,7 +2,7 @@
 import "./LblInpBtn.scss";
 import { Component } from "preact";
 //-----------//////////---------------------------------------------o
-export class LblInpBut extends Component {
+export class LblInpBtn extends Component {
   constructor(p) {
     super(p);
     this.state = {

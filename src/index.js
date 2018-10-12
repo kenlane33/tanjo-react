@@ -1,9 +1,9 @@
 //------////////////--------------------------------------o
 import "./index.scss";
-import {Tabs, SocialIcons, Badge} from "./Tabs/Tabs.js"
+import { Tabs, SocialIcons, Badge } from "./Tabs/Tabs.js"
 import {Clks} from "./TestClicks/TestClicks.js";
-import {SharePage, CardPage, ActPage} from "./BoardTabs/BoardTabs.js";
-import {AddCardButton} from "./AddCardMenu/AddCardMenu.js";
+import { SharePage, CardPage, ActPage } from "./BoardPages/BoardPages.js";
+import { AddCardButton } from "./AddCardMenu/AddCardMenu.js";
 import {Component, render} from "preact";
 //----/////-------------------------------------------o
 class Main extends Component {
@@ -19,7 +19,7 @@ class Main extends Component {
     return (
       <div>
         <FontAwesomeLink/>
-        <Tabs tabs={tabs} initIdx="2"/>
+        <Tabs tabs={tabs} initIdx="0"/>
         <AddCardButton clicks={Clks} />
       </div>
     );

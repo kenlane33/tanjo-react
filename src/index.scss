@@ -1,14 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700|Arvo:400,700);
-@import 'shared.scss';
+
 .body {
-  color: white;
-  background-color: #000;
-  margin: 0;
+  background: red;
   padding: 0;
   font-family: "Source Sans Pro", sans-serif;
 }
 
-
-.open .tabs-content {
-  margin: 0;
-}
