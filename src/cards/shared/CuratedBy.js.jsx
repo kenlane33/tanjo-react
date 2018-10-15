@@ -1,15 +1,16 @@
 import { Component } from "preact";
 
 function isset(x) { return x != null; }
-var user = {id:4};
+var user = {id:42};
 
-class CuratedBy extends Component {
+export class CuratedBy extends Component {
   constructor(props) {
+    //console.log("constructor::props.boardDetails:", props.boardDetails);
     super(props);
     this.state = {
       content: props.content,
       board: props.board,
-      boardDetails: this.setBoardDetails(props)
+      boardDetails: props.boardDetails || this.setBoardDetails(props)
     }
   }
 
@@ -21,8 +22,11 @@ class CuratedBy extends Component {
 
   setBoardDetails(props) {
     if (isset(props.board) && isset(props.content.boards)) {
-      return props.content.boards.find(function(b) { return b.id === props.board.id; })
+      let foundBoard = props.content.boards.find(function (b) { return b.id === props.board.id; });
+      console.log("foundBoard:",foundBoard);
+      return foundBoard;
     } else {
+      console.log('nope');
       return {saved_by:null}
     }
   }
@@ -34,6 +38,9 @@ class CuratedBy extends Component {
 
   */
   determineCurator() {
+    console.log("content:",this.state.content);
+    //console.log(user.id);
+    console.log("boardDetails:",this.state.boardDetails);
     if (isset(this.state.content) && (this.state.content.type === "Board")
       && isset(this.state.content.owner.id) && (user.id === this.state.content.owner.id)) {
       return "Board Owner Header"
