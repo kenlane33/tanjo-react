@@ -709,4 +709,17 @@ media=screen */
 	font-weight:200;
 	src:local('Source Sans Pro ExtraLight'), local('SourceSansPro-ExtraLight'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/6xKydSBYKcSV-LCoeQqfX1RYOo3i94_wmhdu3cOWxy40.woff2) format('woff2');
 }
+.board-card {
+	.curatedBy {
+		color:white;
+	}
+.actions{
+		position:absolute;
+		bottom:-8px;
+		right:0;
+	}
+}
+
+
+
 }

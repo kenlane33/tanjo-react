@@ -4,10 +4,8 @@ import "./Banner.scss";
 export var BoardBanner = () => (
   <div
     class="row boardHeader"
-    style="display:none; background-image: url('https://tanjo.s3.amazonaws.com/uploads/content/image/2995607/gettyimages-814034854.jpg');"
+    style="background-image: url('https://tanjo.s3.amazonaws.com/uploads/content/image/2995607/gettyimages-814034854.jpg');"
   >
-    One Two Three
-    
     <div class="cover overlay" />
     <div class="medium-10 small-12 columns name">
       <h2>
@@ -21,7 +19,7 @@ export var BoardBanner = () => (
           title="New Note Card"
           href="/boards/935711/whiteboards/new"
         >
-          <i class="fa fa-clipboard" />
+          {/*<i class="fa fa-clipboard" />*/}
         </a>
       </h2>
     </div>

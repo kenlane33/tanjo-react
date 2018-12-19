@@ -5,7 +5,7 @@
   text-transform: uppercase;
   background-color: $bg;
   border-bottom: 1px solid $fg;
-  height: $tall + $gap;
+  height: $tall + $gap + 1;
   display: flex;
   width: 100%;
 
@@ -112,7 +112,7 @@
     padding: 2px 4px 4px 3px;
     font-size: 16px;
     font-weight: 400;
-    height: 17px;
+    height: 20px;
     line-height: 17px;
     @media (max-width: $cutoff-1) {
       position: relative;

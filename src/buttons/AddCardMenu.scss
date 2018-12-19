@@ -1,4 +1,4 @@
-@import '../shared.scss';
+@import "../shared.scss";
 
 .add-button-box {
   position: relative;
@@ -7,8 +7,8 @@
 .add-button {
   border: solid 10px $bg;
   position: absolute;
-  top: -15px;
-  left: 1px;
+  bottom: -5px;
+  right: 1px;
   display: inline-block;
   overflow: hidden;
   .inner {

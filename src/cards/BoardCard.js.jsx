@@ -1,4 +1,9 @@
-function BoardCard(props) {
+import { CuratedBy } from "./shared/CuratedBy.js";
+import { HexLink } from "./shared/HexLink.js.jsx";
+import { CardLike } from "./shared/CardLike.js.jsx";
+import { CardSave } from "./shared/CardSave.js.jsx";
+
+export function BoardCard(props) {
   let href = '/boards/'+props.content.id;
   let default_image = "//tanjo.s3.amazonaws.com/assets/logos/tanjo-logo.png";
   let styles = {
@@ -12,7 +17,7 @@ function BoardCard(props) {
 
         <div className="board-card__container" style={styles}>
           <div className="overlay cover"></div>
-          <a href={href} className="cover board-card__cover-link"></a>
+          <a href={href} className="cover board-card__cover-link"> </a>
           <h3 className="title text-treatment board-card__title">
             <a href={href} className="board-card__title-link">{props.content.name}</a>
           </h3>

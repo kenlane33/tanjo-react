@@ -1,4 +1,4 @@
-function AdderBtn(p) {
+export function AdderBtn(p) {
   return (
     <span className="adderBtn" onClick={p.onClick} style={p.style}>
       <span className="plus">{p.plus||p.children}</span>

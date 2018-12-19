@@ -1,4 +1,4 @@
-@import '../shared.scss';
+@import "../shared.scss";
 
 .share {
   display: inline-block;
@@ -13,6 +13,7 @@
     text-transform: uppercase;
     font-weight: 100;
     display: block;
+    color: white;
   }
   input {
     display: inline-block;
@@ -37,6 +38,5 @@
   top: 2px;
   line-height: 24px;
   display: inline-block;
-  width: 70px;
   text-align: center;
 }

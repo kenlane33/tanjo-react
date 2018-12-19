@@ -23,10 +23,10 @@ export class CuratedBy extends Component {
   setBoardDetails(props) {
     if (isset(props.board) && isset(props.content.boards)) {
       let foundBoard = props.content.boards.find(function (b) { return b.id === props.board.id; });
-      console.log("foundBoard:",foundBoard);
+      //console.log("foundBoard:",foundBoard);
       return foundBoard;
     } else {
-      console.log('nope');
+      //console.log('nope');
       return {saved_by:null}
     }
   }
@@ -38,9 +38,9 @@ export class CuratedBy extends Component {
 
   */
   determineCurator() {
-    console.log("content:",this.state.content);
+    //console.log("content:",this.state.content);
     //console.log(user.id);
-    console.log("boardDetails:",this.state.boardDetails);
+    //console.log("boardDetails:",this.state.boardDetails);
     if (isset(this.state.content) && (this.state.content.type === "Board")
       && isset(this.state.content.owner.id) && (user.id === this.state.content.owner.id)) {
       return "Board Owner Header"

@@ -1,4 +1,5 @@
-import {ArticleCard} from "./ArticleCard.js";
+import { ArticleCard } from "./ArticleCard.js";
+import { BoardCard } from "./BoardCard.js";
 import "./Cards.scss";
 export var BoardCards = () => (
   <div className="row stream-contents">
@@ -18,7 +19,7 @@ export var BoardCards = () => (
         owner: { id: 42 },
       }}
     />
-    <ArticleCard
+    <BoardCard
       board={{ id: 123 }}
       boardDetails={{
         relevance: 42,

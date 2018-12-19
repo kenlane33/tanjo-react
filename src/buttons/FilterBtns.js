@@ -1,7 +1,7 @@
-//------///////////////--------------------------------------o
+//---------//////////--------------------------------------o
 import "./FilterBtns.scss"
 import { Component } from "preact";
-//-----------////////--------------------------------------o
+//-----------///////////--------------------------------------o
 export class FilterBtns extends Component {
   constructor(p) {
     super(p);
@@ -35,7 +35,7 @@ var FilterText = (p) => {
   let cls = "tiny" + (p.txt && p.txt.length > 12 ? " way-tiny" : ""); // shrink overlong
   return <div className={cls}>{p.txt}</div>;
 };
-//--///////------------------------------------------------o
+//--//////////------------------------------------------------o
 var FilterBtn = (p) => {
   let cls = "filter";
   if (p.active) cls += " active-filter";

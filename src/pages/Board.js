@@ -6,7 +6,7 @@ import { BoardCards }  from "../cards/Cards.js";
 //------////////////--------------------------------------o
 export var BoardPage = () => (
   <div>
-    {/*<BoardBanner />*/}
+    <BoardBanner />
     <BoardTabs />
     <BoardCards />
   </div>
